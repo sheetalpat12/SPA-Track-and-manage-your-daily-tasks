@@ -1,6 +1,9 @@
 <section class="todoapp">
   <header class="header">
     <h1>todos</h1>
+    <form id="new-form">
+      <input type="text" class="new-todo" />
+    </form>
   </header>
 
   <section class="main">
@@ -13,6 +16,13 @@
 
 <script>
   $(function() {
+    $('#new-form').submit(function(event) {
+      event.preventDefault();
+      var textbox = $('.new-todo');
+      console.log("Task: ", textbox.val());
+    });
+
+
     // The taskHtml method takes in a JavaScript representation
     // of the task and produces an HTML representation using
     // <li> tags
@@ -35,9 +45,7 @@
     function toggleTask(e) {
       var itemId = $(e.target).data("id");
 
-
       var doneValue = Boolean($(e.target).is(':checked'));
-
 
       $.post("/tasks/" + itemId, {
         _method: "PUT",
