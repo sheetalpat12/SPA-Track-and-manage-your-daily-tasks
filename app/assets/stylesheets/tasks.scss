@@ -125,7 +125,7 @@ label[for='toggle-all'] {
   width: 60px;
   height: 34px;
   text-align: center;
-  border: none; /* Mobile Safari */
+  border: 10px; /* Mobile Safari */
 }
 
 .toggle-all:before {
@@ -170,6 +170,9 @@ label[for='toggle-all'] {
 .todo-list li.editing .view {
   display: none;
 }
+#dialog{
+  display:none;
+}
 
 .todo-list li .toggle {
   text-align: center;
@@ -181,7 +184,7 @@ label[for='toggle-all'] {
   bottom: 0;
   margin: auto 0;
   border: none; /* Mobile Safari */
-  -webkit-appearance: none;
+  -webkit-appearance: checkbox;
   appearance: none;
 }
 

@@ -63,11 +63,13 @@ $(function() {
     };
     $.post("/tasks", payload).success(function(data) {
       var htmlString = taskHtml(data);
+      alert(textbox.val() + ' has been added to your To Do list');
+      textbox.val('');
       var ulTodos = $('.todo-list');
       ulTodos.append(htmlString);
       $('.toggle').click(toggleTask);
-      $('.new-todo').val('');
+
     });
   });
 
-});
+}); 
