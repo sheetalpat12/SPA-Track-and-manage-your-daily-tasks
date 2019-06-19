@@ -1,11 +1,17 @@
 <section class="todoapp">
+
   <header class="header">
-    <h1>todos</h1>
+    <h1>Keep your life in sync</h1>
+    <div><h4 class="current-date">Today's date:<%= Time.now.strftime("%m/%d/%Y") %></h4></div>
+    <div id="total">
+      
+    </div>
     <form id="new-form">
+      
       <input type="text" class="new-todo" placeholder="What needs to be done?" />
       <div id="dialog" title="Basic dialog">
         <p>has been added to the list</p>
-        </div>
+      </div>
     </form>
   </header>
 
@@ -18,7 +24,7 @@
 
 
 <section class="author">
-  A <%= link_to "todo-mvc", "http://todomvc.com" %>
+  An <%= link_to "todo-mvc", "http://todomvc.com" %>
   application, built by
   <%= link_to "Sheetal Patel", "http://github.com/sheetalpatel" %>
 </section>
