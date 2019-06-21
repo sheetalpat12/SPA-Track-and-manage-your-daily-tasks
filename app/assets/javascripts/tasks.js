@@ -97,10 +97,10 @@ $(function() {
     //alert('inside image function');
 
    /// $('#dialog').show();
-   alert('This task will be marked as important');
+  // alert('This task will be marked as important');
    console.log(e.target);
    var itemId = (e.target.id)
-    alert('Inside the toggletask important:'+itemId);
+   // alert('Inside the toggletask important:'+itemId);
    var importantValue = true;
    $.post("/tasks/" + itemId, {
       _method: "PUT",
@@ -112,8 +112,8 @@ $(function() {
       var $li = $("#listItem-" + data.id);
       $li.replaceWith(liHtml);
 
-      alert('Inside the success of toggle task important'+data);
-      debugger;
+      //alert('Inside the success of toggle task important'+data);
+      //debugger;
       alert(data.title + ' has been marked as an important');
      // $('.toggleTaskImportant').change(toggleTaskImportant);
       //$('.importantImg').change(toggleImage);
@@ -126,10 +126,10 @@ $(function() {
   function toggleImageUnImportant(e)
   {
    
-   alert('This task will be marked as unimportant');
+   //alert('This task will be marked as unimportant');
    console.log(e.target);
    var itemId = (e.target.id)
-    alert('Inside the toggletask important:'+itemId);
+    //alert('Inside the toggletask important:'+itemId);
    var importantValue = false;
    $.post("/tasks/" + itemId, {
       _method: "PUT",
@@ -141,8 +141,8 @@ $(function() {
       var $li = $("#listItem-" + data.id);
       $li.replaceWith(liHtml);
 
-      alert(data);
-      debugger;
+     // alert(data);
+     // debugger;
       alert(data.title + ' has been marked as an unimportant');
      // $('.toggleTaskImportant').change(toggleTaskImportant);
     
@@ -163,10 +163,10 @@ $(function() {
 
     var ulTodos = $('.todo-list');
     ulTodos.html(htmlString);
-    alert('The html string is:'+htmlString);
+   // alert('The html string is:'+htmlString);
     $('.toggle').change(toggleTask);
     UpdateTotal();
-     alert('inside the get tasks function');
+    // alert('inside the get tasks function');
    // $('.toggleTaskImportant').change(toggleTaskImportant); 
 
     $('.allTasksIconImg').click(toggleImageImportant); ///This function is being called when the user cicks on the image after all the tasks are loaded onto the page
@@ -194,7 +194,7 @@ $(function() {
       var ulTodos = $('.todo-list');
       ulTodos.append(htmlString);
       $('.toggle').click(toggleTask);
-       alert('New form function is here');
+      // alert('New form function is here');
        UpdateTotal();
      // $('.toggleTaskImportant').click(toggleTaskImportant); ///changed this from toggleTaskImportant 
       $('.importantImg').click(toggleImageUnImportant);
@@ -207,8 +207,8 @@ $(function() {
 function UpdateTotal(){
   $.get("/tasks").success( function( data ) {
       var htmlString = "";
-       alert('Inside the toggle task functionthe Total number of task is:'+data.length);
-       console.log(data);
+      // alert('Inside the toggle task functionthe Total number of task is:'+data.length);
+      // console.log(data);
 
       var totalCompletedTasks = 0;
       var checkedImportantTasks = 0;
@@ -223,8 +223,8 @@ function UpdateTotal(){
       });
        var totalTasks = data.length;
        var divTotal = $('#total');
-       alert('The completed tasks inside the toggle task is:'+totalCompletedTasks);
-       alert('Task not completed but important to do:'+taskNotCompleteAndImportantToDo);
+      // alert('The completed tasks inside the toggle task is:'+totalCompletedTasks);
+      // alert('Task not completed but important to do:'+taskNotCompleteAndImportantToDo);
        divTotal.html('<b style="padding-left:1%">Total Tasks:  '+totalTasks+ '</b>' + '<b style="color:blue;padding-left: 18%;" title="Awesome!!Keep up the pace!!">Completed Tasks:'+totalCompletedTasks + '</b>'+ '<b style="color:#DB4C3F;padding-left:10%" title="Hurry!!You can do it!"> Important To Do Task:'+taskNotCompleteAndImportantToDo);
       });
 }
