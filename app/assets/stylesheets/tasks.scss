@@ -155,6 +155,7 @@ label[for='toggle-all'] {
   position: relative;
   font-size: 24px;
   border-bottom: 1px solid #ededed;
+  word-wrap:normal;
 }
 
 .todo-list li:last-child {
@@ -210,7 +211,6 @@ label[for='toggle-all'] {
   display: inline;
   line-height: 1.2;
   transition: color 0.4s;
-  margin-right: 200px;
   overflow-wrap: break-word;
 }
 
